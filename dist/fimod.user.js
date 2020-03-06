@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        fimod
-// @author      sidke, damionmounts(this fork)
-// @namespace   https://github.com/damionmounts/fimod
+// @author      sidke, damionmounts
+// @namespace   https://github.com/sidke/fimod
 // @description factory idle mod
 // @include     *://factoryidle.com/*
 // @version     1.06.15
