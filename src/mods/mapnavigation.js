@@ -3,14 +3,22 @@ import Fimod from '../fimod';
 import { insertStyle } from '../lib/utility';
 import { clamp } from '../lib/common'; 
 
-const css = `
+const css = `canvas { 
+	image-rendering: optimizeSpeed; 
+	image-rendering: -moz-crisp-edges; 
+	image-rendering: -webkit-optimize-contrast; 
+	image-rendering: -o-crisp-edges; 
+	image-rendering: pixelated; 
+	-ms-interpolation-mode: nearest-neighbor; 
+}
+
 #gameArea .mapContainer > div {
-  position: relative;
+	position: relative;
 }
 
 #gameArea .mapContainer > div > div {
-  position: absolute !important;
-  transform-origin: 0 0;
+	position: absolute !important;
+	transform-origin: 0 0;
 }
 `;
 
