@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        fimod
-// @author      sidke (creator), damionmounts (implemented nearest-neighbor scaling proposed by dyleighba)
+// @author      sidke
 // @namespace   https://github.com/sidke/fimod
 // @description factory idle mod
 // @include     *://factoryidle.com/*
