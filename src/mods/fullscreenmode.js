@@ -1,4 +1,4 @@
-import Fimod from '../Fimod';
+import Fimod from '../fimod';
 
 import { insertStyle } from '../lib/utility';
 
@@ -149,7 +149,7 @@ Fimod.define({
 
     const $main = $('#main');
     const $adArea = $('<div id="adArea" class="ad_box"></div>');
-    const $ads = $('.adsbygoogle').parent();
+    const $ads = $('.adsbygoogle').closest('div');
     if ($ads.length) {
       $adArea.append($ads);
       $ads.last().remove();

@@ -1,7 +1,7 @@
 export function preventScript(src) {
   return new Promise(resolve => {
     const handleScript = (event) => {
-      if (event.target.src == src) {
+      if (src.test(event.target.src)) {
         event.preventDefault();
         document.removeEventListener('beforescriptexecute', handleScript);
         if (window._disconnectBeforeScriptExecute) window._disconnectBeforeScriptExecute();
@@ -13,8 +13,16 @@ export function preventScript(src) {
   });
 }
 
-export function getScript(src) {
-  return fetch(src).then(response => response.text());
+export function getScript(url) {
+  return new Promise(resolve => {
+    GM.xmlHttpRequest({
+      method: 'GET',
+      url,
+      onload: (response) => {
+        resolve(response.responseText);
+      },
+    });
+  });
 }
 
 export function insertElement(data, tag) {

@@ -1,13 +1,13 @@
+import './mods';
 import Fimod from './fimod';
 import { preventScript, getScript, insertScript } from './lib/utility';
 import './lib/beforescriptexecute-polyfill.js';
 import './lib/requestFullscreen-polyfill.js';
-import './mods';
 
-const SCRIPT_SRC = 'http://factoryidle.com/app.js';
+const SCRIPT_SRC = 'https://factoryidle.com/app.js';
 let loadingMessage;
 
-preventScript(SCRIPT_SRC);
+preventScript(/\/app.js$/);
 
 getScript(SCRIPT_SRC)
   .then(source => {
@@ -23,7 +23,7 @@ getScript(SCRIPT_SRC)
 
     const start = source.indexOf('var MainInstance');
     return new Promise(resolve => {
-      window.__FIMOD_RESOLVE__ = resolve;
+      unsafeWindow.__FIMOD_RESOLVE__ = resolve;
       insertScript(`${source.substring(0, start)}; __FIMOD_RESOLVE__(${object}); }()`);
     });
   })

@@ -7,9 +7,9 @@ works on both the [Factory Idle] site and [Kongregate]
 
 ## installation
 
-1. install a userscript manager
-  - [Greasemonkey] - Firefox
-  - [Tampermonkey] - Chrome
+1. install [Tampermonkey]
+  - [Firefox](https://www.tampermonkey.net/?ext=dhdg&browser=firefox)
+  - [Chrome](https://www.tampermonkey.net/?ext=dhdg&browser=chrome)
 1. install the script from github
   - [fimod.user.js](http://github.com/sidke/fimod/raw/master/dist/fimod.user.js)
 
